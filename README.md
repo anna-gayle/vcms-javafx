@@ -52,6 +52,9 @@ Author is currently working on another project.
 - **Notifications:**
   - Provides notifications for important events or reminders.
 
+- **Random Generation:**
+  - Randomly generates IDs, receipt numbers, and activation codes.
+
 ## Technologies Used
 
 - JavaFX: Used for building the graphical user interface (GUI).
