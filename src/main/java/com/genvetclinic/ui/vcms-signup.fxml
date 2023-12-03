@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="800.0" maxWidth="695.0" minHeight="800.0" minWidth="639.0" prefHeight="800.0" prefWidth="639.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.SignupController">
+   <children>
+      <TextField fx:id="newUsernameField" layoutX="113.0" layoutY="281.0" prefHeight="26.0" prefWidth="414.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="newPasswordField" layoutX="113.0" layoutY="340.0" prefHeight="26.0" prefWidth="414.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></PasswordField>
+      <Label layoutX="113.0" layoutY="259.0" text="Username:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="114.0" layoutY="317.0" text="Password:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Button fx:id="newSignupButton" layoutX="413.0" layoutY="681.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #358856; -fx-text-fill: #ffffff;" text="Sign Up">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelSignUpButton" layoutX="413.0" layoutY="41.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #358856; -fx-text-fill: #ffffff;" text="Cancel">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Button>
+      <Label layoutX="113.0" layoutY="130.0" style="-fx-text-fill: #358856;" text="Sign Up">
+         <font>
+            <Font name="Calibri" size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="113.0" layoutY="216.0" text="Fill in required information.">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="113.0" layoutY="376.0" text="Email:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="114.0" layoutY="434.0" text="Security Question:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <MenuButton fx:id="securityQuestionMenu" contentDisplay="TOP" layoutX="113.0" layoutY="457.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="414.0" text="Pick security question...">
+        <items>
+            <MenuItem mnemonicParsing="false" text="What is your dream car/motorcycle?" />
+          <MenuItem mnemonicParsing="false" text="What was the name of your childhood pet?" />
+          <MenuItem mnemonicParsing="false" text="What year was your grandmother born?" />
+            <MenuItem mnemonicParsing="false" text="What was the first concert you attended?" />
+            <MenuItem mnemonicParsing="false" text="In what city or town did your parents meet?" />
+            <MenuItem mnemonicParsing="false" text="What was your favorite toy as a child?" />
+            <MenuItem mnemonicParsing="false" text="What was the last name of your favorite professor?" />
+            <MenuItem mnemonicParsing="false" text="As a child, what did you want to be when you grew up?" />
+            <MenuItem mnemonicParsing="false" text="Who was your childhood hero?" />
+            <MenuItem mnemonicParsing="false" text="What is your favorite song?" />
+            <MenuItem mnemonicParsing="false" text="What is your dream car/motorcycle?" />
+        </items>
+      </MenuButton>
+      <Label layoutX="114.0" layoutY="553.0" text="Activation Code:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="113.0" layoutY="494.0" text="Security Answer:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <TextField fx:id="newEmailField" layoutX="113.0" layoutY="399.0" prefHeight="26.0" prefWidth="414.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="securityAnswerField" layoutX="113.0" layoutY="517.0" prefHeight="26.0" prefWidth="414.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="activationField" layoutX="113.0" layoutY="575.0" prefHeight="26.0" prefWidth="414.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <Button fx:id="clearSignupButton" layoutX="288.0" layoutY="681.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #358856; -fx-text-fill: #ffffff;" text="Clear">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Button>
+      <ImageView fx:id="signupIconViewer" fitHeight="150.0" fitWidth="200.0" layoutX="270.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

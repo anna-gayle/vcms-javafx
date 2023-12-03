@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="dashboardPane" maxHeight="770.0" maxWidth="1115.0" minHeight="770.0" minWidth="1115.0" prefHeight="770.0" prefWidth="1115.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.DashboardPanelController">
+   <children>
+      <AnchorPane layoutX="30.0" layoutY="81.0" prefHeight="168.0" prefWidth="344.0" style="-fx-background-radius: 30; -fx-background-color: #358856;">
+         <children>
+            <Text fx:id="digitalClockText" layoutX="29.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="00:00:00">
+               <font>
+                  <Font name="Calibri" size="80.0" />
+               </font>
+            </Text>
+            <Text fx:id="dateYearDayText" layoutX="102.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="mm/dd/yyyy, eeee">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="timeCounterIcon" fitHeight="30.0" fitWidth="30.0" layoutX="285.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Time%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="395.0" layoutY="81.0" prefHeight="168.0" prefWidth="95.0" style="-fx-background-radius: 30; -fx-background-color: #5AAB61;">
+         <children>
+            <Text fx:id="noPatientsText" layoutX="16.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="00">
+               <font>
+                  <Font name="Calibri" size="60.0" />
+               </font>
+            </Text>
+            <Text layoutX="21.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Patients">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="patientCounterIcon" fitHeight="30.0" fitWidth="30.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Pets%20Icon.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="20.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Admitted">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="505.0" layoutY="81.0" prefHeight="168.0" prefWidth="95.0" style="-fx-background-radius: 30; -fx-background-color: #25532B;">
+         <children>
+            <Text fx:id="noPersonnelText" layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="00">
+               <font>
+                  <Font name="Calibri" size="60.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="employeeCounterIcon" fitHeight="30.0" fitWidth="30.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Employees%20Icon.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Employees">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="293.0" prefHeight="446.0" prefWidth="639.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Text layoutX="23.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" text="Weekly Schedule">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Text>
+            <TableView fx:id="weeklyScheduleTable" layoutX="23.0" layoutY="81.0" prefHeight="307.0" prefWidth="594.0">
+               <columns>
+                  <TableColumn fx:id="sundayColumn" prefWidth="84.4" text="Sun" />
+                  <TableColumn fx:id="mondayColumn" prefWidth="84.8" text="Mon" />
+                  <TableColumn fx:id="tuesdayColumn" prefWidth="84.8" text="Tue" />
+                  <TableColumn fx:id="wednesdayColumn" prefWidth="84.8" text="Wed" />
+                  <TableColumn fx:id="thursdayColumn" prefWidth="84.8" text="Thurs" />
+                  <TableColumn fx:id="fridayColumn" prefWidth="84.8" text="Fri" />
+                  <TableColumn fx:id="saturdayColumn" prefWidth="84.8" text="Sat" />
+               </columns>
+            </TableView>
+            <Text fx:id="weekDatesText" layoutX="23.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" text="(Nov 19 - Nov 25)">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="685.0" layoutY="293.0" prefHeight="446.0" prefWidth="401.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Text layoutX="29.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" text="Notifications">
+               <font>
+                  <Font name="Calibri Bold" size="25.0" />
+               </font>
+            </Text>
+            <Accordion fx:id="notificationBoard" layoutX="29.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="317.0" prefWidth="344.0">
+              <panes>
+                <TitledPane fx:id="pbBoard" text="Patients">
+                     <content>
+                        <AnchorPane prefHeight="55.0" prefWidth="462.0">
+                           <children>
+                              <Text fx:id="patientsNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="bBoard" text="Boarders">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="boardersNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                <TitledPane fx:id="appBoard" text="Appointments">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="appointmentNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="invBoard" text="Inventory">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="inventoryNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="kenBoard" text="Kennels">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="kennelNotifText" layoutX="124.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="labBoard" text="Laboratories">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="labNotifText" layoutX="124.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="perBoard" text="Employees">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="personnelNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                    </content>
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane fx:id="transBoard" prefHeight="171.0" prefWidth="344.0" text="Transactions">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="transactionNotifText" layoutX="128.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No new notifications." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Calibri" size="10.0" />
+                                 </font></Text>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="614.0" layoutY="81.0" prefHeight="168.0" prefWidth="95.0" style="-fx-background-radius: 30; -fx-background-color: #0C3823;">
+         <children>
+            <Text layoutX="17.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Admitted">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="noKennelsOccupantsText" layoutX="17.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="00">
+               <font>
+                  <Font name="Calibri" size="60.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="boarderCounterIcon" fitHeight="30.0" fitWidth="30.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Boardees%20Icon.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="18.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Boarders">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="729.0" layoutY="81.0" prefHeight="168.0" prefWidth="344.0" style="-fx-background-color: #5AAB61; -fx-background-radius: 30;">
+         <children>
+            <Text fx:id="earningstext" layoutX="33.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="₱-------">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Text>
+            <Text layoutX="122.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #ffffff;" text="Total Earnings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="earningsCounterIcon" fitHeight="30.0" fitWidth="30.0" layoutX="274.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Earnings%20Count%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

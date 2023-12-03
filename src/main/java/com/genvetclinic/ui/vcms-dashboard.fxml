@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1366.0" minHeight="768.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.DashboardController">
+   <children>
+    <AnchorPane fx:id="sidebarPane" maxHeight="805.0" maxWidth="240.0" minHeight="221.0" minWidth="240.0" prefHeight="770.0" prefWidth="240.0" style="-fx-background-color: #358856;">
+         <children>
+            <ImageView fx:id="logoImageViewer" fitHeight="196.0" fitWidth="119.0" layoutX="57.0" layoutY="26.0">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/GVC%20Logo%20White%202.png" />
+               </image>
+            </ImageView>
+            <VBox fx:id="sidebarVBox" layoutY="246.0" prefHeight="267.0" prefWidth="240.0">
+               <children>
+                  <Button fx:id="sidebarDashboardButton" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Dashboard">
+                     <graphic>
+                        <ImageView fx:id="dashboardIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Dashboard%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="sidebarPatientButton" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="246.0" style="-fx-background-color: transarent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Patients">
+                     <graphic>
+                        <ImageView fx:id="patientsIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Patients%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="sidebarBoarderButton" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="295.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Boarders">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="boarderIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Boarder%20Icon%202.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarAppointmentButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="252.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Appointments">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="appointmentIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Appointments%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarInventoryButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="243.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Inventory">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="inventoryIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Inventory%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarKennelButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="252.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Kennels">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="kennelIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Kennel%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarLabButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Laboratories">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="labIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Laboratory%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarPersonnelButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Employees">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="employeeIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Personnel%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarTransacButton" graphicTextGap="15.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="244.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Transactions">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="transactionIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Transaction%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="sidebarProfileButton" graphicTextGap="15.0" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-alignment: center-left;" text="Account">
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="profileIconViewer" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../resources/com/genvetclinic/images/Account%20Icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="1.0" right="1.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+    <AnchorPane fx:id="contentLoaderPane" layoutX="240.0" layoutY="-2.0" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1126.0" prefHeight="770.0" prefWidth="1126.0">
+         <children>
+            <ProgressIndicator fx:id="loadingProgressBar" layoutX="550.0" layoutY="345.0" prefHeight="80.0" prefWidth="60.0" progress="0.0" />
+         </children>
+         <padding>
+            <Insets left="1.0" right="1.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</AnchorPane>

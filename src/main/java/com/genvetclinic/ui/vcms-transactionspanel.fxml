@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="transactionsPane" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1145.0" prefHeight="770.0" prefWidth="1145.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.TransactionPanelController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="26.0" prefHeight="672.0" prefWidth="353.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="15.0" layoutY="490.0" text="Transaction Date-Time:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <TextField fx:id="transactionDescField" layoutX="125.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="remuneratorField" layoutX="125.0" layoutY="135.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Label layoutX="55.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Create/Edit Transaction">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="139.0" text="Remunerator:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="175.0" text="Beneficiary:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <TextField fx:id="beneficiaryField" layoutX="125.0" layoutY="170.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Label layoutX="15.0" layoutY="210.0" text="Transaction Type:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="350.0" text="Payment Method:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="280.0" text="Total:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <MenuButton fx:id="transactionTypeMenu" layoutX="125.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Transaction Type">
+               <items>
+                  <MenuItem fx:id="ttOp1" mnemonicParsing="false" text="Donations/Fundraising" />
+                  <MenuItem fx:id="ttOp2" mnemonicParsing="false" text="Preventive Care Packages" />
+                  <MenuItem fx:id="ttOp3" mnemonicParsing="false" text="Online/Phone Consultations" />
+                  <MenuItem fx:id="ttOp4" mnemonicParsing="false" text="Payment Plans" />
+                  <MenuItem fx:id="ttOp5" mnemonicParsing="false" text="Boarding and Grooming Fees" />
+                  <MenuItem fx:id="ttOp6" mnemonicParsing="false" text="Emergency Care Charges" />
+                  <MenuItem fx:id="ttOp7" mnemonicParsing="false" text="Service Fees" />
+                  <MenuItem fx:id="ttOp8" mnemonicParsing="false" text="Product Sales" />
+                  <MenuItem fx:id="ttOp9" mnemonicParsing="false" text="Consultation Fees" />
+                  <MenuItem fx:id="ttOp10" mnemonicParsing="false" text="Diagnostic Services" />
+                  <MenuItem fx:id="ttOp11" mnemonicParsing="false" text="Follow-up Appointments" />
+                  <MenuItem fx:id="ttOp12" mnemonicParsing="false" text="Insurance Claims" />
+                  <MenuItem fx:id="ttOp13" mnemonicParsing="false" text="Collaborations" />
+                  <MenuItem fx:id="ttOp14" mnemonicParsing="false" text="In-House Pharmacy" />
+                  <MenuItem fx:id="ttOp15" mnemonicParsing="false" text="Licensing/Regulatory Fees" />
+               </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="15.0" layoutY="246.0" text="Description:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <MenuButton fx:id="paymentMethodMenu" layoutX="125.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Payment Method">
+               <items>
+                  <MenuItem fx:id="pmOp1" mnemonicParsing="false" text="Bank Transfer" />
+                  <MenuItem fx:id="pmOp2" mnemonicParsing="false" text="Online Payment" />
+                  <MenuItem fx:id="pmOp3" mnemonicParsing="false" text="Check" />
+                  <MenuItem fx:id="pmOp4" mnemonicParsing="false" text="Cash" />
+                  <MenuItem fx:id="pmOp5" mnemonicParsing="false" text="Credit" />
+                  <MenuItem fx:id="pmOp6" mnemonicParsing="false" text="Mobile Payments" />
+                  <MenuItem fx:id="pmOp7" mnemonicParsing="false" text="Insurance" />
+                  <MenuItem fx:id="pmOp8" mnemonicParsing="false" text="Third Party Service" />
+               </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="15.0" layoutY="314.0" text="Amount Received:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <TextField fx:id="amountReceivedField" layoutX="125.0" layoutY="310.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Label layoutX="15.0" layoutY="455.0" text="Receipt No.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <TextField fx:id="transactionTotalField" layoutX="125.0" layoutY="275.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Text fx:id="receiptNoText" layoutX="125.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" wrappingWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Text>
+            <Text fx:id="transactionDateTimeText" layoutX="147.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" wrappingWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Text>
+            <Text fx:id="transacChangeText" layoutX="125.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" wrappingWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Text>
+            <Button fx:id="createTransacButton" layoutX="241.0" layoutY="533.0" mnemonicParsing="false" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="+ Create">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="clearTransacButton" layoutX="146.0" layoutY="533.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Clear">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="deleteTransacButton" layoutX="241.0" layoutY="566.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="- Delete">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="saveTransacButton" layoutX="146.0" layoutY="566.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="15.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Please fill in all fields, write n/a for inapplicable fields.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="385.0" text="Change:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="420.0" text="Transaction Status:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <MenuButton fx:id="transactionStatusMenu" layoutX="125.0" layoutY="414.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Transaction Status">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Canceled" />
+                  <MenuItem mnemonicParsing="false" text="Pending" />
+                  <MenuItem mnemonicParsing="false" text="Authorized" />
+                  <MenuItem mnemonicParsing="false" text="Captured" />
+                  <MenuItem mnemonicParsing="false" text="Failed" />
+                  <MenuItem mnemonicParsing="false" text="Refunded" />
+                  <MenuItem mnemonicParsing="false" text="Chargeback" />
+                  <MenuItem mnemonicParsing="false" text="Reversed" />
+                  <MenuItem mnemonicParsing="false" text="On Hold" />
+                  <MenuItem mnemonicParsing="false" text="Expired" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <ImageView fx:id="addTransIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="15.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Add%20Transac%20Icon%202.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="397.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="693.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="82.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Transaction Records">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <TableView fx:id="transactionTableView" layoutX="40.0" layoutY="135.0" prefHeight="457.0" prefWidth="614.0">
+               <columns>
+                  <TableColumn fx:id="transactionIdColumn" prefWidth="92.0" text="Transaction ID" />
+                  <TableColumn fx:id="remuneratorColumn" prefWidth="108.0" text="Remunerator" />
+                  <TableColumn fx:id="beneficiaryColumn" prefWidth="83.0" text="Beneficiary" />
+                  <TableColumn fx:id="transacTypeColumn" prefWidth="104.0" text="Transaction Type" />
+                  <TableColumn fx:id="transacDescColumn" prefWidth="106.0" text="Description" />
+                  <TableColumn fx:id="transacTotalColumn" prefWidth="75.0" text="Total" />
+                  <TableColumn fx:id="amountReceivedColumn" prefWidth="75.0" text="Amount Received" />
+                  <TableColumn fx:id="paymentMethodColumn" prefWidth="75.0" text="Payment Method" />
+                  <TableColumn fx:id="transactionChangeColumn" prefWidth="75.0" text="Change" />
+                  <TableColumn fx:id="receiptNoColumn" prefWidth="75.0" text="Receipt No." />
+                  <TableColumn fx:id="transacDateTimeColumn" prefWidth="75.0" text="Transaction Date Time" />
+                  <TableColumn fx:id="transactionStatusColumn" prefWidth="75.0" text="Transaction Status" />
+               </columns>
+            </TableView>
+            <Label layoutX="40.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Select row to view or edit. Double click to select, click once to deselect.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Label>
+            <ImageView fx:id="manageTransIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="40.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Manage%20Transac%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="appointmentsPane" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1145.0" prefHeight="770.0" prefWidth="1145.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.AppointmentsPanelController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="26.0" prefHeight="672.0" prefWidth="334.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="55.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Create/Edit Appointment">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="serviceRequiredMenu" layoutX="125.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Service Required">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Diagnosis and Treatment" />
+                  <MenuItem mnemonicParsing="false" text="Vaccination" />
+                  <MenuItem mnemonicParsing="false" text="Parasite Control" />
+                  <MenuItem mnemonicParsing="false" text="Laboratory Services" />
+                  <MenuItem mnemonicParsing="false" text="Counseling" />
+                  <MenuItem mnemonicParsing="false" text="Boarding" />
+                  <MenuItem mnemonicParsing="false" text="Grooming" />
+                  <MenuItem mnemonicParsing="false" text="Euthanasia" />
+               </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="15.0" layoutY="139.0" text="Client Name:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="clientNameField" layoutX="125.0" layoutY="135.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Label layoutX="15.0" layoutY="210.0" text="Service Required:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="246.0" text="Assg. Personnel:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="assignedPersonnelField" layoutX="125.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <DatePicker fx:id="appointmentDateField" layoutX="125.0" layoutY="275.0" prefHeight="25.0" prefWidth="133.0" />
+            <Label layoutX="15.0" layoutY="280.0" text="Appt. Date:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="314.0" text="Appt. Time (24H):">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="appointmentTimeField" layoutX="125.0" layoutY="310.0" prefHeight="25.0" prefWidth="133.0" promptText="HH:mm ">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Button fx:id="createAppointmentButton" layoutX="217.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="+ Create">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="clearAppointmentButton" layoutX="120.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Clear">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="15.0" layoutY="175.0" text="Client Contact:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="clientContactField" layoutX="125.0" layoutY="170.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></TextField>
+            <Label layoutX="15.0" layoutY="350.0" text="Status:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="appointmentStatusMenu" layoutX="125.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Status">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ongoing" />
+                <MenuItem mnemonicParsing="false" text="Completed" />
+                  <MenuItem mnemonicParsing="false" text="Cancelled" />
+                  <MenuItem mnemonicParsing="false" text="Set for Reschedule" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="deleteAppointmentButton" layoutX="217.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="- Delete">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="saveAppointmentButton" layoutX="120.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="15.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Please fill in all fields, write n/a for inapplicable fields.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="createApptconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="16.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Add%20Appointment%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="376.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <TableView fx:id="appointmentTableView" layoutX="41.0" layoutY="135.0" prefHeight="475.0" prefWidth="632.0">
+               <columns>
+                  <TableColumn fx:id="appointmentIdColumn" prefWidth="97.0" text="Appointment ID" />
+                  <TableColumn fx:id="clientNameColumn" prefWidth="90.0" text="Client Name" />
+                  <TableColumn fx:id="clientContactColumn" prefWidth="94.0" text="Client Contact" />
+                  <TableColumn fx:id="serviceRequiredColumn" prefWidth="96.0" text="Service Required" />
+                  <TableColumn fx:id="assignedPersonnelColumn" prefWidth="97.0" text="Appointed Personnel" />
+                  <TableColumn fx:id="appointmentDateColumn" minWidth="0.0" text="Date" />
+                  <TableColumn fx:id="appointmentTimeColumn" prefWidth="77.0" text="Time" />
+                  <TableColumn fx:id="appointmentStatusColumn" prefWidth="130.0" text="Status" />
+               </columns>
+            </TableView>
+            <Label layoutX="82.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Manage Appointments">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Select row to view or edit. Double click to select, click once to deselect.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="manageApptIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="41.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Manage%20Appointment%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

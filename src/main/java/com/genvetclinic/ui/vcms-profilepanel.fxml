@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="460.0" maxWidth="932.0" minHeight="460.0" minWidth="425.0" prefHeight="460.0" prefWidth="932.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.ProfilePanelController">
+   <children>
+      <Text fx:id="helloUserText" layoutX="25.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" text="Hello ....!" wrappingWidth="320.0">
+         <font>
+            <Font name="Calibri Bold" size="35.0" />
+         </font>
+      </Text>
+      <Button fx:id="adminLogoutButton" layoutX="314.0" layoutY="27.0" mnemonicParsing="false" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Logout">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="25.0" layoutY="125.0" text="Admin ID: ">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="157.0" text="Edit Username:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="188.0" text="Edit Password:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="221.0" text="Edit Email:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="293.0" text="Edit Security Question:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <Label layoutX="25.0" layoutY="330.0" text="Edit Security Answer:">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></Label>
+      <MenuButton fx:id="editSQMenu" contentDisplay="TOP" layoutX="161.0" layoutY="289.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="133.0" text="Pick security question...">
+         <items>
+            <MenuItem fx:id="esqOp1" mnemonicParsing="false" text="What is your dream car/motorcycle?" />
+            <MenuItem fx:id="esqOp2" mnemonicParsing="false" text="What was the name of your childhood pet?" />
+            <MenuItem fx:id="esqOp3" mnemonicParsing="false" text="What year was your grandmother born?" />
+            <MenuItem fx:id="esqOp4" mnemonicParsing="false" text="What was the first concert you attended?" />
+            <MenuItem fx:id="esqOp5" mnemonicParsing="false" text="In what city or town did your parents meet?" />
+            <MenuItem fx:id="esqOp6" mnemonicParsing="false" text="What was your favorite toy as a child?" />
+            <MenuItem fx:id="esqOp7" mnemonicParsing="false" text="What was the last name of your favorite professor?" />
+            <MenuItem fx:id="esqOp8" mnemonicParsing="false" text="As a child, what did you want to be when you grew up?" />
+            <MenuItem fx:id="esqOp9" mnemonicParsing="false" text="Who was your childhood hero?" />
+            <MenuItem fx:id="esqOp10" mnemonicParsing="false" text="What is your favorite song?" />
+         </items>
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </MenuButton>
+      <TextField fx:id="editUsernameField" layoutX="123.0" layoutY="153.0" prefHeight="25.0" prefWidth="133.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="editPasswordField" layoutX="123.0" layoutY="184.0" prefHeight="25.0" prefWidth="133.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="editEmailField" layoutX="123.0" layoutY="217.0" prefHeight="25.0" prefWidth="133.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="editSecurityAnswerField" layoutX="161.0" layoutY="326.0" prefHeight="25.0" prefWidth="133.0">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font></TextField>
+      <Button fx:id="saveAdminButton" layoutX="314.0" layoutY="379.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="deleteAdminButton" layoutX="182.0" layoutY="379.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Delete Account">
+         <font>
+            <Font name="Calibri Bold" size="12.0" />
+         </font></Button>
+      <Text fx:id="adminIdText" layoutX="123.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #358856;" wrappingWidth="133.0">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font></Text>
+      <TableView fx:id="activationCodeTableView" layoutX="475.0" layoutY="125.0" prefHeight="281.0" prefWidth="399.0">
+        <columns>
+          <TableColumn fx:id="codeColumn" prefWidth="294.0" text="Activation Code" />
+          <TableColumn fx:id="codeStatusColumn" prefWidth="104.0" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="generateCodeButton" layoutX="806.0" layoutY="76.0" mnemonicParsing="false" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Generate " />
+      <Label layoutX="475.0" layoutY="73.0" style="-fx-text-fill: #358856;" text="Generate Activation Code">
+         <font>
+            <Font name="Calibri" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

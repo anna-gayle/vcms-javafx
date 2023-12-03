@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="kennelPane" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1145.0" prefHeight="770.0" prefWidth="1145.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.BoardersPanelController">
+   <children>
+    <AnchorPane layoutX="24.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="483.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="55.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Admit/Edit Boarder">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="139.0" text="Boarder Name:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderNameField" layoutX="100.0" layoutY="135.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="175.0" text="Species:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderSpeciesField" layoutX="100.0" layoutY="170.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="210.0" text="Breed:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderBreedField" layoutX="100.0" layoutY="205.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="314.0" text="Color:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderColorField" layoutX="100.0" layoutY="310.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="457.0" text="Special Instructions:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="boarderSITextArea" layoutX="15.0" layoutY="480.0" prefHeight="62.0" prefWidth="219.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="245.0" layoutY="139.0" text="Owner Name:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bOwnerNameField" layoutX="335.0" layoutY="135.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="245.0" layoutY="175.0" text="Owner Contact:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bOwnerContactField" layoutX="335.0" layoutY="170.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="245.0" layoutY="245.0" text="Owner Address:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bOwnerAddressField" layoutX="335.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="dateBoardedDP" layoutX="100.0" layoutY="380.0" prefHeight="25.0" prefWidth="133.0" />
+            <Label layoutX="15.0" layoutY="385.0" text="Arrival Date:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="addBoarderButton" layoutX="373.0" layoutY="514.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="+ Admit">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="clearBoarderButton" layoutX="278.0" layoutY="514.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Clear">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="saveBoarderButton" layoutX="278.0" layoutY="549.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="deleteBoarderButton" layoutX="373.0" layoutY="549.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="- Delete">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="15.0" layoutY="246.0" text="Age (in years):">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderAgeField" layoutX="100.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="280.0" text="Gender:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="350.0" text="Weight (kg):">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="boarderWeightField" layoutX="100.0" layoutY="345.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="420.0" text="Departure Date:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Please fill in all fields, write n/a for inapplicable fields.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="boarderGenderMenu" layoutX="100.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Gender">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Female" />
+                <MenuItem mnemonicParsing="false" text="Male" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <DatePicker fx:id="departureDateDP" layoutX="100.0" layoutY="415.0" prefHeight="25.0" prefWidth="133.0" />
+            <ImageView fx:id="admitBoarderIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="15.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Add%20Boarder%202.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="bOwnerEmailField" layoutX="335.0" layoutY="205.0" prefHeight="25.0" prefWidth="133.0" />
+            <Label layoutX="245.0" layoutY="209.0" text="Owner Email:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="526.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="571.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <TableView fx:id="boarderTableView" layoutX="31.0" layoutY="135.0" prefHeight="484.0" prefWidth="505.0">
+               <columns>
+                  <TableColumn fx:id="boarderIdColumn" prefWidth="75.0" text="Boarder ID" />
+                  <TableColumn fx:id="boarderNameColumn" prefWidth="127.0" text="Boarder Name" />
+                  <TableColumn fx:id="boarderSpeciesColumn" prefWidth="107.0" text="Boarder Species" />
+                  <TableColumn fx:id="boarderBreedColumn" prefWidth="97.0" text="Boarder Breed" />
+                  <TableColumn fx:id="boarderColorColumn" prefWidth="99.0" text="Boarder Color" />
+                  <TableColumn fx:id="boarderAgeColumn" prefWidth="93.0" text="Boarder Age (years)" />
+                  <TableColumn fx:id="boarderGenderColumn" prefWidth="57.0" text="Boarder Gender" />
+                  <TableColumn fx:id="boarderWeightColumn" prefWidth="75.0" text="Boarder Weight" />
+                  <TableColumn fx:id="brdrOwnerNameColumn" prefWidth="89.0" text="Owner Name" />
+                  <TableColumn fx:id="brdrOwnerContactColumn" prefWidth="135.0" text="Owner Contact" />
+                  <TableColumn fx:id="brdrOwnerAddColumn" prefWidth="75.0" text="Owner Address" />
+                  <TableColumn fx:id="brdrOwnerEmailColumn" prefWidth="75.0" text="Owner Email" />
+                  <TableColumn fx:id="departureDateColumn" prefWidth="75.0" text="Departure Date" />
+                  <TableColumn fx:id="boardAdmitColumn" prefWidth="101.0" text="Date Admitted" />
+               </columns>
+            </TableView>
+            <Label layoutX="68.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Manage Boarder">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Select row to view or edit. Double click to select, click once to deselect.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="manageBoarderIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Manage%20Boarder%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

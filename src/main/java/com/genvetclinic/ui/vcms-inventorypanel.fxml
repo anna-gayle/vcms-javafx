@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="inventoryPane" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1145.0" prefHeight="770.0" prefWidth="1145.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.InventoryPanelController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="26.0" prefHeight="672.0" prefWidth="324.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="55.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Add/Edit Item">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Please fill in all fields, write n/a for inapplicable fields.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="unitCostField" layoutX="100.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="139.0" text="Item Name:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="itemNameField" layoutX="100.0" layoutY="135.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <MenuButton fx:id="itemTypeMenu" layoutX="100.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Category">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Medical Supplies" />
+                  <MenuItem mnemonicParsing="false" text="Medication" />
+                  <MenuItem mnemonicParsing="false" text="Food and Water" />
+                  <MenuItem mnemonicParsing="false" text="Cleaning Supplies" />
+                  <MenuItem mnemonicParsing="false" text="Laboratory Supplies" />
+                  <MenuItem mnemonicParsing="false" text="Office Supplies" />
+                  <MenuItem mnemonicParsing="false" text="Equipment" />
+                  <MenuItem mnemonicParsing="false" text="Animal Care Items" />
+               </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="15.0" layoutY="175.0" text="Item Type:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="210.0" text="Item Quantity:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="itemQuantityField" layoutX="100.0" layoutY="205.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="246.0" text="Unit Cost:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="314.0" text="Supplier:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="350.0" text="Exp. Date:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="itemSupplierField" layoutX="100.0" layoutY="310.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="addItemButton" layoutX="215.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="+ Add">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="clearItemButton" layoutX="120.0" layoutY="454.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Clear">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <MenuButton fx:id="itemStatusMenu" layoutX="100.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Status">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Out of Stock" />
+                <MenuItem mnemonicParsing="false" text="In Stock" />
+                  <MenuItem mnemonicParsing="false" text="On Order" />
+                  <MenuItem mnemonicParsing="false" text="Reserved" />
+                  <MenuItem mnemonicParsing="false" text="Damaged/Faulty" />
+                  <MenuItem mnemonicParsing="false" text="In Transit" />
+                  <MenuItem mnemonicParsing="false" text="Low Stock" />
+                  <MenuItem mnemonicParsing="false" text="Under Inspection" />
+                  <MenuItem mnemonicParsing="false" text="Discontinued" />
+                  <MenuItem mnemonicParsing="false" text="Returned" />
+                  <MenuItem mnemonicParsing="false" text="Sold/Issued" />
+                  <MenuItem mnemonicParsing="false" text="Scrapped/Obsolete" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Label layoutX="15.0" layoutY="280.0" text="Item Status:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="expDateField" layoutX="100.0" layoutY="345.0" prefHeight="25.0" prefWidth="133.0" />
+            <Button fx:id="saveItemButton" layoutX="120.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="deleteItemButton" layoutX="215.0" layoutY="489.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="- Delete">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <CheckBox fx:id="hasAnExpDateCB" layoutX="129.0" layoutY="380.0" mnemonicParsing="false" text="Has an Exp. Date">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </CheckBox>
+            <ImageView fx:id="addItemIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Add%20Item%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="366.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="715.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <TableView fx:id="itemTableView" layoutX="25.0" layoutY="135.0" prefHeight="475.0" prefWidth="665.0">
+               <columns>
+                  <TableColumn fx:id="itemIdColumn" prefWidth="94.0" text="Item ID" />
+                  <TableColumn fx:id="itemNameColumn" prefWidth="102.0" text="Item Name" />
+                  <TableColumn fx:id="itemTypeColumn" prefWidth="104.0" text="Item Type" />
+                  <TableColumn fx:id="itemQuantityColumn" prefWidth="94.0" text="Quantity" />
+                  <TableColumn fx:id="unitCostColumn" prefWidth="86.0" text="Unit Cost" />
+                  <TableColumn fx:id="totalCostColumn" prefWidth="94.0" text="Total Cost" />
+                  <TableColumn fx:id="itemSupplierColumn" prefWidth="90.0" text="Supplier" />
+                  <TableColumn fx:id="expDateColumn" prefWidth="114.0" text="Exp. Date" />
+                  <TableColumn fx:id="itemStatusColumn" prefWidth="107.0" text="Status" />
+               </columns>
+            </TableView>
+            <Label layoutX="65.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Manage Inventory">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Select row to view or edit. Double click to select, click once to deselect.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="manageItemIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="25.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Manage%20Item%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

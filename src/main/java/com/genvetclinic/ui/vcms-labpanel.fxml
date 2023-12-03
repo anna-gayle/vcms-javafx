@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="kennelPane" maxHeight="770.0" maxWidth="1145.0" minHeight="770.0" minWidth="1145.0" prefHeight="770.0" prefWidth="1145.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.genvetclinic.controllers.LaboratoriesPanelController">
+   <children>
+    <AnchorPane layoutX="24.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="353.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="56.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Add/Edit Laboratory">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="139.0" text="Laboratory Type:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="175.0" text="No. of Equipment:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="noLabEquipField" layoutX="125.0" layoutY="170.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="15.0" layoutY="210.0" text="Status:">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="labStatusMenu" layoutX="125.0" layoutY="205.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Status">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Available for Testing" />
+                <MenuItem mnemonicParsing="false" text="In Use" />
+                  <MenuItem mnemonicParsing="false" text="Under Maintenance" />
+                  <MenuItem mnemonicParsing="false" text="Out of Service" />
+                  <MenuItem mnemonicParsing="false" text="Pending Approval" />
+                  <MenuItem mnemonicParsing="false" text="Completed Experiment" />
+                  <MenuItem mnemonicParsing="false" text="Awaiting Supplies" />
+                  <MenuItem mnemonicParsing="false" text="Calibration Due" />
+                  <MenuItem mnemonicParsing="false" text="Data Analysis" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="addLabButton" layoutX="240.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="+ Add">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="clearLabButton" layoutX="146.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Clear">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="saveLabButton" layoutX="146.0" layoutY="342.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="Save">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="deleteLabButton" layoutX="240.0" layoutY="342.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #358856; -fx-text-fill: #FFFFFF;" text="- Delete">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="15.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Please fill in all fields, write n/a for inapplicable fields.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="labNameMenu" layoutX="125.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Laboratory Type">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Clinical Pathology Lab" />
+                <MenuItem mnemonicParsing="false" text="Microbiology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Parasitology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Hematology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Serology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Cytology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Histopathology Lab" />
+                  <MenuItem mnemonicParsing="false" text="Diagnostic Imaging Lab" />
+                  <MenuItem mnemonicParsing="false" text="Genetics Lab" />
+                  <MenuItem mnemonicParsing="false" text="Chemistry Lab" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
+            <ImageView fx:id="addLabIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="15.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Add%20Lab%20Icon%202.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="397.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="633.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="43.0" layoutY="90.0" style="-fx-text-fill: #358856;" text="Select row to view or edit. Double click to select, click once to deselect.">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <TableView fx:id="labTableView" layoutX="43.0" layoutY="135.0" prefHeight="457.0" prefWidth="549.0">
+              <columns>
+                  <TableColumn fx:id="labIDColumn" prefWidth="120.0" text="Laboratory ID" />
+                <TableColumn fx:id="labNameColumn" prefWidth="185.0" text="Laboratory Type" />
+                <TableColumn fx:id="noLabEquipColumn" prefWidth="131.0" text="No. of Equipment" />
+                  <TableColumn fx:id="labStatusColumn" prefWidth="113.0" text="Status" />
+              </columns>
+            </TableView>
+            <Label layoutX="85.0" layoutY="40.0" style="-fx-text-fill: #358856;" text="Manage Laboratories">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="manageLabIconViewer" fitHeight="32.0" fitWidth="32.0" layoutX="43.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/com/genvetclinic/images/Manage%20Lab%20Icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
