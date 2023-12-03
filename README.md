@@ -17,11 +17,7 @@ Author is currently working on another project.
 - JavaFX: Used for building the graphical user interface (GUI).
 - MySQL: Used for database management and storage.
 
-## Getting Started
-
-To get started with the `vcms-javafx` project, follow these steps:
-
-### Prerequisites
+## Prerequisites
 
 Make sure you have the following installed on your machine:
 
@@ -29,12 +25,9 @@ Make sure you have the following installed on your machine:
 - Maven
 - MySQL Server
 
-### Clone the Repository
 
-## Contributing
 
-If you're interested in contributing to this project, feel free to reach out to the project author for more information.
 
-## License
+
 
 
