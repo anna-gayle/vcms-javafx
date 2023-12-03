@@ -122,50 +122,82 @@ public class DashboardController {
         profileIconViewer.setImage(profileIcon);
     }
 
-    /**
+     /**
      * Sets up event handlers for sidebar buttons, specifying the corresponding FXML panel to load.
      */
     private void setupEventhandler() {
-        sidebarDashboardButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-dashboardpanel.fxml"));
-        sidebarPatientButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-patientspanel.fxml"));
-        sidebarAppointmentButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-appointmentspanel.fxml"));
-        sidebarInventoryButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-inventorypanel.fxml"));
-        sidebarKennelButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-kennelspanel.fxml"));
-        sidebarLabButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-labpanel.fxml"));
-        sidebarTransacButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-transactionspanel.fxml"));
-        sidebarPersonnelButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-personnelpanel.fxml"));
-        sidebarProfileButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-profilepanel.fxml"));
-        sidebarBoarderButton.setOnAction(event -> loadPanel("/com/genvetclinic/ui/vcms-boarderspanel.fxml"));
+        addEffect(sidebarDashboardButton, "/com/genvetclinic/ui/vcms-dashboardpanel.fxml");
+        addEffect(sidebarPatientButton, "/com/genvetclinic/ui/vcms-patientspanel.fxml");
+        addEffect(sidebarAppointmentButton, "/com/genvetclinic/ui/vcms-appointmentspanel.fxml");
+        addEffect(sidebarInventoryButton, "/com/genvetclinic/ui/vcms-inventorypanel.fxml");
+        addEffect(sidebarKennelButton, "/com/genvetclinic/ui/vcms-kennelspanel.fxml");
+        addEffect(sidebarLabButton, "/com/genvetclinic/ui/vcms-labpanel.fxml");
+        addEffect(sidebarTransacButton, "/com/genvetclinic/ui/vcms-transactionspanel.fxml");
+        addEffect(sidebarPersonnelButton, "/com/genvetclinic/ui/vcms-personnelpanel.fxml");
+        addEffect(sidebarProfileButton, "/com/genvetclinic/ui/vcms-profilepanel.fxml");
+        addEffect(sidebarBoarderButton, "/com/genvetclinic/ui/vcms-boarderspanel.fxml");
     }
 
     /**
-     * Adds hover effects to sidebar buttons to change their appearance when the mouse enters or exits.
-     */
-    private void addHoverEffectSidebar() {
-        addMenuHoverEffect(sidebarDashboardButton);
-        addMenuHoverEffect(sidebarPatientButton);
-        addMenuHoverEffect(sidebarAppointmentButton);
-        addMenuHoverEffect(sidebarInventoryButton);
-        addMenuHoverEffect(sidebarKennelButton);
-        addMenuHoverEffect(sidebarLabButton);
-        addMenuHoverEffect(sidebarTransacButton);
-        addMenuHoverEffect(sidebarPersonnelButton);
-        addMenuHoverEffect(sidebarProfileButton);
-        addMenuHoverEffect(sidebarBoarderButton);
-    }
-
-    /**
-     * Adds hover effect to a specified button, changing its background color and text fill on mouse events.
+     * Adds visual effects to a JavaFX Button, including click and hover effects, and specifies the FXML panel to load
+     * when the button is clicked.
      *
-     * @param button the button to apply hover effect.
+     * @param button    The JavaFX Button to which the effects will be applied.
+     * @param fxmlPath  The file path of the FXML panel to load when the button is clicked.
      */
-    private void addMenuHoverEffect(Button button) {
+    private Button currentlyClickedButton = null;
+
+    private void addEffect(Button button, String fxmlPath) {
+        button.setOnAction(event -> {
+            loadPanel(fxmlPath);
+
+            // Reset style for the previously clicked button
+            if (currentlyClickedButton != null && currentlyClickedButton != button) {
+                updateButtonStyle(currentlyClickedButton, false);
+            }
+
+            // Set style for the newly clicked button
+            updateButtonStyle(button, true);
+            currentlyClickedButton = button;
+        });
+
         button.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-            button.setStyle("-fx-background-color: #30694B; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            if (currentlyClickedButton != button) {
+                button.setStyle("-fx-background-color: #30694B; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            }
         });
 
         button.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-            button.setStyle("-fx-background-color: #358856; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            if (currentlyClickedButton != button) {
+                button.setStyle("-fx-background-color: #358856; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            }
         });
+
+        button.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> {
+            if (currentlyClickedButton != button) {
+                button.setStyle("-fx-background-color: #30694B; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            }
+        });
+
+        button.addEventHandler(MouseEvent.MOUSE_RELEASED, e -> {
+            if (currentlyClickedButton != button) {
+                // Reset to the default style after the mouse is released
+                button.setStyle("-fx-background-color: #358856; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+            }
+        });
+    }
+
+    /**
+     * Updates the visual style of a JavaFX Button based on whether it is considered clicked or not.
+     *
+     * @param button    The JavaFX Button whose style will be updated.
+     * @param isClicked A boolean indicating whether the button is considered clicked or not.
+     */
+    private void updateButtonStyle(Button button, boolean isClicked) {
+        if (isClicked) {
+            button.setStyle("-fx-background-color: #30694B; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+        } else {
+            button.setStyle("-fx-background-color: #358856; -fx-text-fill: #ffffff; -fx-alignment: center-left;");
+        }
     }
 }
