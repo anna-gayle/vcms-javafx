@@ -4,13 +4,53 @@ A basic veterinary clinic management system using JavaFX and MySQL.
 
 ## Project Overview
 
-The `vcms-javafx` project was created to fulfill academic requirements. 
+The `vcms-javafx` project was created to fulfill academic requirements.
 
 ## Project Status
 
 **Note: Markdown is pending.**
 
 Author is currently working on another project.
+
+## Features
+
+- **User Interface (UI):**
+  - Has a GUI.
+
+- **Input Validations:**
+  - Implements basic input validation.
+
+- **Authentication:**
+  - Provides user authentication functionalities:
+    - Login
+    - Signup
+    - Recover Password
+
+- **CRUD Operations:**
+  - Provides CRUD (Create, Read, Update, Delete) functions for the following entities:
+    - Patients
+    - Appointments
+    - Boarders
+    - and more...
+
+- **Dashboard Widgets:**
+  - Basic widgets on the dashboard for quick access and information.
+
+- **Real-Time Digital Clock:**
+  - Includes a real-time digital clock for accurate timekeeping.
+
+- **Counters:**
+  - Displays counters for:
+    - Total Patients
+    - Total Employees
+    - Total Boarders
+    - Total Earnings
+
+- **Weekly Schedule Calendar:**
+  - Features a small calendar showing the weekly schedule.
+
+- **Notifications:**
+  - Provides notifications for important events or reminders.
 
 ## Technologies Used
 
@@ -24,10 +64,3 @@ Make sure you have the following installed on your machine:
 - Java Development Kit (JDK)
 - Maven
 - MySQL Server
-
-
-
-
-
-
-
