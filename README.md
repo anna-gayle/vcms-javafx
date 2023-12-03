@@ -67,3 +67,6 @@ Make sure you have the following installed on your machine:
 - Java Development Kit (JDK)
 - Maven
 - MySQL Server
+
+> **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes.
+
