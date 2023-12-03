@@ -56,7 +56,6 @@ public class DashboardController {
         loadPanel("/com/genvetclinic/ui/vcms-dashboardpanel.fxml");
         setImageforIcons();
         setupEventhandler();
-        addHoverEffectSidebar();
     }
 
     /**
