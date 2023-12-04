@@ -69,4 +69,5 @@ Make sure you have the following installed on your machine:
 - MySQL Server
 
 > **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes.
+> The icons included are from Icons8.com
 
