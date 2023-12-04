@@ -47,10 +47,10 @@ Author is currently working on another project.
     - Total Earnings
 
 - **Weekly Schedule Calendar:**
-  - Features a small calendar showing the weekly schedule.
+  - Features a small calendar* showing the weekly schedule.
 
 - **Notifications:**
-  - Provides notifications for important events or reminders.
+  - Provides notifications for important events or reminders (weekly).
 
 - **Random Generation:**
   - Randomly generates IDs, receipt numbers, and activation codes.
@@ -69,5 +69,6 @@ Make sure you have the following installed on your machine:
 - MySQL Server
 
 > **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes.
-> The icons included are from Icons8.com
+
+> Icons by Icons8.
 
