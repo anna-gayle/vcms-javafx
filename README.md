@@ -4,7 +4,7 @@ A basic veterinary clinic management system using JavaFX and MySQL.
 
 ## Project Overview
 
-The `vcms-javafx` project was created to fulfill academic requirements.
+This `vcms-javafx` project was created to fulfill academic requirements.
 
 ## Project Status
 
