@@ -69,6 +69,8 @@ Make sure you have the following installed on your machine:
 - MySQL Server
 
 ![Screenshot](screenshot.png)
+![Screenshot](screenshot-2.png)
+![Screenshot](screenshot-3.png)
 
 > **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes.
 
