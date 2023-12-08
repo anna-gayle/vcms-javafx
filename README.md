@@ -72,3 +72,6 @@ Make sure you have the following installed on your machine:
 
 > Icons by Icons8.
 
+![Screenshot](schemtool-py/sample output.png)
+
+
