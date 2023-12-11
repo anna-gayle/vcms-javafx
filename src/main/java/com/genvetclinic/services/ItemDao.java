@@ -46,8 +46,7 @@ public class ItemDao {
         this.databaseConnection = databaseConnection;
     }
 
-     // Methods for saving, updating, and deleting item records...
-
+     // Methods for saving, updating, retrieving, and deleting item records...
     public void saveItem(Item item) throws SQLException {
         String sql = "INSERT INTO inventory (item_id, item_name, item_type, item_quantity, unit_cost, " +
                      "item_supplier, exp_date, item_status, total_cost) " +
@@ -165,21 +164,6 @@ public class ItemDao {
         }
         return items;
     }
-
-    /*
-    public boolean isItemExists(String itemId) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM inventory WHERE item_id = ?";
-        try (Connection connection = databaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, itemId);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                resultSet.next();
-                int count = resultSet.getInt(1);
-                return count > 0;
-            }
-        }
-    }
-     */
     
     /**
      * Retrieves a notification message for items that need attention.
@@ -204,7 +188,6 @@ public class ItemDao {
     }
 
     // Private methods for setting parameters during database operations...
-
     private Item mapResultSetToItem(ResultSet resultSet) throws SQLException {
         return new Item(
                 resultSet.getString("item_id"),
