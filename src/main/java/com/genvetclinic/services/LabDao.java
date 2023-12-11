@@ -43,7 +43,7 @@ public class LabDao {
         this.databaseConnection = databaseConnection;
     }
 
-    // Methods for saving, updating, and deleting lab records...
+    // Methods for saving, updating, retrieving, and deleting lab records...
     public void saveLab(Lab lab) throws SQLException {
         String sql = "INSERT INTO laboratories (lab_id, lab_name, no_of_lab_equipment, lab_status) VALUES (?, ?, ?, ?)";
         try (Connection connection = databaseConnection.getConnection();
