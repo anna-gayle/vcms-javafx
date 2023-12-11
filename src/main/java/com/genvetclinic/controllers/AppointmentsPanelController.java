@@ -3,6 +3,8 @@ package com.genvetclinic.controllers;
 import java.sql.*;
 import java.time.*;
 import java.time.format.*;
+import java.util.List;
+
 import com.genvetclinic.models.Appointment;
 import com.genvetclinic.services.*;
 import com.genvetclinic.utils.*;
@@ -27,16 +29,17 @@ import javafx.scene.image.*;
 public class AppointmentsPanelController {
 
     private AppointmentDao appointmentDao;
+    private PersonnelDao personnelDao;
     private DatabaseConnection databaseConnection;
     private Appointment lastSelectedAppointment;
 
     @FXML private TextField clientNameField;
     @FXML private TextField clientContactField;
     @FXML private MenuButton serviceRequiredMenu;
-    @FXML private TextField assignedPersonnelField;
     @FXML private DatePicker appointmentDateField;
     @FXML private TextField appointmentTimeField;
     @FXML private MenuButton appointmentStatusMenu;
+    @FXML private MenuButton assignedPersonnelMenu;
     @FXML private Button createAppointmentButton;
     @FXML private Button clearAppointmentButton;
     @FXML private ImageView createApptconViewer;
@@ -60,6 +63,7 @@ public class AppointmentsPanelController {
         try {
             this.databaseConnection = new DatabaseConnection();
             this.appointmentDao = new AppointmentDao(databaseConnection);
+            this.personnelDao = new PersonnelDao(databaseConnection);
         } catch (SQLException e) {
             e.printStackTrace();
             AlertUtils.showErrorAlert("Error", "Unable to establish a database connection.");
@@ -77,6 +81,7 @@ public class AppointmentsPanelController {
         enableAppointmentTableSelection();
         initializeAppStatusMenu();
         initializeServiceMenu();
+        initializePersonnelMenu();
         initializeButtons();
         setupEventHandlers();
         setImageForIcons();
@@ -191,7 +196,7 @@ public class AppointmentsPanelController {
             String clientName = clientNameField.getText();
             String clientContact = clientContactField.getText();
             String serviceRequired = serviceRequiredMenu.getText();
-            String assignedPersonnel = assignedPersonnelField.getText();
+            String assignedPersonnel = assignedPersonnelMenu.getText();
             String appointmentStatus = appointmentStatusMenu.getText();
             LocalDate appointmentDate = ParseUtils.parseLocalDate(appointmentDateField.getValue().toString());
             LocalTime appointmentTime = ParseUtils.parseLocalTime(appointmentTimeField.getText());
@@ -273,7 +278,7 @@ public class AppointmentsPanelController {
             String updatedClientName = clientNameField.getText();
             String updatedClientContact = clientContactField.getText();
             String updatedServiceRequired = serviceRequiredMenu.getText();
-            String updatedAssignedPersonnel = assignedPersonnelField.getText();
+            String updatedAssignedPersonnel = assignedPersonnelMenu.getText();
             String updatedAppointmentStatus = appointmentStatusMenu.getText();
             LocalDate updatedAppointmentDate = ParseUtils.parseLocalDate(appointmentDateField.getValue().toString());
             LocalTime updatedAppointmentTime = ParseUtils.parseLocalTime(appointmentTimeField.getText());
@@ -372,7 +377,7 @@ public class AppointmentsPanelController {
         clientNameField.setText(appointment.getClientName());
         clientContactField.setText(appointment.getClientContact());
         serviceRequiredMenu.setText(appointment.getServiceRequired());
-        assignedPersonnelField.setText(appointment.getAssignedPersonnel());
+        assignedPersonnelMenu.setText(appointment.getAssignedPersonnel());
         appointmentDateField.setValue(appointment.getAppointmentDate());
         appointmentTimeField.setText(appointment.getAppointmentTime().format(DateTimeFormatter.ofPattern("HH:mm")));
         appointmentStatusMenu.setText(appointment.getAppointmentStatus());
@@ -444,6 +449,7 @@ public class AppointmentsPanelController {
         serviceRequiredMenu.getItems().clear();
         serviceRequiredMenu.getItems().addAll(
                 new MenuItem("Diagnosis and Treatment"),
+                new MenuItem("Surgery"),
                 new MenuItem("Vaccination"),
                 new MenuItem("Parasite Control"),
                 new MenuItem("Laboratory Services"),
@@ -479,6 +485,32 @@ public class AppointmentsPanelController {
         appointmentStatusMenu.getItems().forEach(item -> item.setOnAction(event -> handleAppStatusMenuItem(item.getText())));
     }
 
+    // Handles assigned personnel menu item.
+    private void handlePersonnelMenuItem(String selectedPersonnelName) {
+        // Set the text of the menu button to the selected personnel name
+        assignedPersonnelMenu.setText(selectedPersonnelName);
+    
+    }
+
+    // Fill assigned aersonnel menu with personnel names + job titles from personnel table
+    private void initializePersonnelMenu() {
+        assignedPersonnelMenu.getItems().clear();
+        try {
+            // Retrieve a list of personnel names with job titles from the database
+            List<String> personnelNamesWithJobTitle = personnelDao.getAllPersonnelNamesWithJobTitle();
+    
+            // Create menu items for each personnel name with job title
+            for (String fullNameWithJobTitle : personnelNamesWithJobTitle) {
+                MenuItem menuItem = new MenuItem(fullNameWithJobTitle);
+                menuItem.setOnAction(event -> handlePersonnelMenuItem(fullNameWithJobTitle));
+                assignedPersonnelMenu.getItems().add(menuItem);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        }
+    }
+    
     /**
      * Clears all the appointment fields.
      */    
@@ -486,7 +518,7 @@ public class AppointmentsPanelController {
         clientNameField.clear();
         clientContactField.clear();
         serviceRequiredMenu.setText("Select Service");
-        assignedPersonnelField.clear();
+        assignedPersonnelMenu.setText("Assigned Personnel");
         appointmentDateField.setValue(null);
         appointmentTimeField.clear();
         appointmentStatusMenu.setText("Select Status");
