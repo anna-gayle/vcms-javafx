@@ -57,10 +57,6 @@
                   <Font name="Calibri" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="assignedPersonnelField" layoutX="125.0" layoutY="240.0" prefHeight="25.0" prefWidth="133.0">
-               <font>
-                  <Font name="Calibri" size="12.0" />
-               </font></TextField>
             <DatePicker fx:id="appointmentDateField" layoutX="125.0" layoutY="275.0" prefHeight="25.0" prefWidth="133.0" />
             <Label layoutX="15.0" layoutY="280.0" text="Appt. Date:">
                <font>
@@ -127,6 +123,15 @@
                   <Image url="@../../../../resources/com/genvetclinic/images/Add%20Appointment%20Icon.png" />
                </image>
             </ImageView>
+            <MenuButton fx:id="assignedPersonnelMenu" layoutX="125.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Assigned Personnel">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </MenuButton>
          </children>
       </AnchorPane>
     <AnchorPane layoutX="376.0" layoutY="26.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
