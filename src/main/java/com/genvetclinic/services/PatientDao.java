@@ -40,7 +40,6 @@ public class PatientDao {
     }
 
      // Methods for saving, updating, and deleting patient records...
-
     public void savePatient(Patient patient) throws SQLException {
         String sql = "INSERT INTO patients (patient_id, patient_name, patient_species, patient_breed, age_in_years, patient_color, admitted_date, "
                 + "medical_history, vaccination_history, special_instruction, owner_name, owner_contact, owner_email, owner_address, patient_insurance, "
@@ -128,30 +127,18 @@ public class PatientDao {
      * @throws SQLException if a database access error occurs.
      */
     
-    /*
     public int countPatientsAdmittedThisWeek() throws SQLException {
-        String sql = "SELECT COUNT(*) FROM patients WHERE admitted_date >= CURDATE() - INTERVAL DAYOFWEEK(CURDATE())-1 DAY AND admitted_date < CURDATE() + INTERVAL 1 DAY";
+        String sql = "SELECT COUNT(*) FROM patients WHERE admitted_date >= CURDATE() - INTERVAL DAYOFWEEK(CURDATE()) - 1 DAY AND admitted_date < CURDATE() + INTERVAL 7 - DAYOFWEEK(CURDATE()) DAY";
+        
         try (Connection connection = databaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             resultSet.next();
             return resultSet.getInt(1);
         }
-    }
-    */ 
-
-    public int countPatientsAdmittedThisWeek() throws SQLException {
-        String sql = "SELECT COUNT(*) FROM patients WHERE admitted_date >= CURDATE() - INTERVAL DAYOFWEEK(CURDATE()) + 6 DAY AND admitted_date < CURDATE() + INTERVAL 1 DAY";
-        try (Connection connection = databaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-            resultSet.next();
-            return resultSet.getInt(1);
-        }
-    }
+    }    
     
     // Private methods for setting parameters during database operations...
-    
     private void setSavePatientParameters(PreparedStatement preparedStatement, Patient patient) throws SQLException {
         preparedStatement.setString(1, patient.getPatientid());
         preparedStatement.setString(2, patient.getPatientName());
