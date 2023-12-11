@@ -45,8 +45,7 @@ public class AdminDao {
         this.databaseConnection = databaseConnection;
     }
 
-    // Methods for saving, updating, deleting, and retrieving admin information...
-    
+    // Methods for saving, updating, deleting, validating, and retrieving admin information...
     public void save(Admin admin) throws SQLException {
         try (Connection connection = databaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO admin (admin_id, username, password, admin_email, security_question, security_answer, admin_code, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")) {
