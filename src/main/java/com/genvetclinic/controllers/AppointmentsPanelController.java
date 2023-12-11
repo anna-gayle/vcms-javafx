@@ -213,12 +213,6 @@ public class AppointmentsPanelController {
                 return;
             }
 
-            // Validate assigned personnel name
-            if (!ValidationUtils.isValidName(assignedPersonnel)) {
-                AlertUtils.showErrorAlert("Error", "Invalid assigned personnel name. Please use only letters and spaces.");
-                return;
-            }
-
             // Validate client contact number
             if (!ValidationUtils.isValidInteger(clientContact)) {
                 AlertUtils.showErrorAlert("Error", "Invalid client contact number.");
@@ -292,12 +286,6 @@ public class AppointmentsPanelController {
             // Validate client name
             if (!ValidationUtils.isValidName(updatedClientName)) {
                 AlertUtils.showErrorAlert("Error", "Invalid client name. Please use only letters and spaces.");
-                return;
-            }
-
-            // Validate assigned personnel name
-            if (!ValidationUtils.isValidName(updatedAssignedPersonnel)) {
-                AlertUtils.showErrorAlert("Error", "Invalid assigned personnel name. Please use only letters and spaces.");
                 return;
             }
 
