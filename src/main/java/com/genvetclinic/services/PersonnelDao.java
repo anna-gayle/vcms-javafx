@@ -58,7 +58,6 @@ public class PersonnelDao {
     }
 
     // Methods for saving, updating, deleting, and retrieving personnel information...
-
     public void updatePersonnel(Personnel personnel) throws SQLException {
         String sql = "UPDATE personnel SET personnel_name = ?, personnel_email = ?, personnel_address = ?, personnel_contact = ?, "
             + "emergency_contact = ?, job_title = ?, vet_specialization = ?, hire_date = ?, work_schedule = ?, performance_rating = ?, "
@@ -83,6 +82,13 @@ public class PersonnelDao {
         }
     }
 
+    /**
+     * Check if a personnel exists in the database based on their name, email, and contact.
+     *
+     * @param  personnel  the personnel object to check for existence
+     * @return            true if the personnel exists, false otherwise
+     * @throws SQLException if there is an error executing the SQL query
+     */
     public boolean isPersonnelExists(Personnel personnel) throws SQLException {
         String sql = "SELECT COUNT(*) FROM personnel WHERE personnel_name = ? AND personnel_email = ? AND personnel_contact = ?";
         try (Connection connection = databaseConnection.getConnection();
@@ -128,6 +134,7 @@ public class PersonnelDao {
         }
     }
 
+    // Private methods for setting parameters during database operations...
     private void setSavePersonnelParameters(PreparedStatement preparedStatement, Personnel personnel) throws SQLException {
         preparedStatement.setString(1, personnel.getPersonnelId());
         preparedStatement.setString(2, personnel.getPersonnelName());
