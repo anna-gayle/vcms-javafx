@@ -44,7 +44,7 @@ public class BoarderDao {
         this.databaseConnection = databaseConnection;
     }
 
-    // Methods for saving, updating, deleting, and retrieving boarder information...
+    // Methods for saving, updating, deleting, validating, and retrieving boarder information...
     public void saveBoarder(Boarder boarder) throws SQLException {
         String sql = "INSERT INTO boarders (boarder_id, boarder_name, boarder_species, boarder_breed, boarder_color, " +
                 "b_special_instructions, b_owner_name, b_owner_contact, b_owner_address, date_boarded, boarder_age, " +
@@ -109,31 +109,17 @@ public class BoarderDao {
             return resultSet.getInt(1);
         }
     }
-
-    /*
-    public int countRecentlyAdmittedBoarders() throws SQLException {
-        LocalDate oneWeekAgo = LocalDate.now().minusWeeks(1);
-        String sql = "SELECT COUNT(*) FROM boarders WHERE date_boarded >= ?";
-        try (Connection connection = databaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setDate(1, java.sql.Date.valueOf(oneWeekAgo));
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                resultSet.next();
-                return resultSet.getInt(1);
-            }
-        }
-    }
-     */
     
-     public int countRecentlyAdmittedBoarders() throws SQLException {
-        String sql = "SELECT COUNT(*) FROM boarders WHERE date_boarded >= CURDATE() - INTERVAL DAYOFWEEK(CURDATE()) + 6 DAY AND date_boarded < CURDATE() + INTERVAL 1 DAY";
+    public int countRecentlyAdmittedBoarders() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM boarders WHERE date_boarded >= CURDATE() - INTERVAL DAYOFWEEK(CURDATE()) - 1 DAY AND date_boarded < CURDATE() + INTERVAL 7 - DAYOFWEEK(CURDATE()) DAY";
         try (Connection connection = databaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             resultSet.next();
             return resultSet.getInt(1);
         }
-    }       
+    }
+          
 
     public int countBoardersWithDepartureDateWithinWeek() throws SQLException {
         LocalDate oneWeekLater = LocalDate.now().plusWeeks(1);
@@ -164,6 +150,7 @@ public class BoarderDao {
         }
     }    
 
+    // Private methods for setting parameters during database operations...
     private void setSaveBoarderParameters(PreparedStatement preparedStatement, Boarder boarder) throws SQLException {
         preparedStatement.setString(1, boarder.getBoarderId());
         preparedStatement.setString(2, boarder.getBoarderName());
