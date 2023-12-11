@@ -48,7 +48,6 @@ public class TransactionDao {
     }
 
     // Methods for saving, updating, deleting, and retrieving transaction information...
-
     public void saveTransaction(Transaction transaction, String transactionStatus) throws SQLException {
         String sql = "INSERT INTO transaction (transaction_id, payer, payee, transaction_type, transaction_desc, " +
                      "transaction_amt, amt_received, payment_method, receipt_no, transac_datetime, transaction_change, transaction_status) " +
@@ -138,7 +137,7 @@ public class TransactionDao {
         }
     }
     
-
+    // Private methods for setting parameters during database operations...
     private void setSaveTransactionParameters(PreparedStatement preparedStatement, Transaction transaction, String transactionStatus) throws SQLException {
         preparedStatement.setString(1, transaction.getTransactionId());
         preparedStatement.setString(2, transaction.getPayer());
