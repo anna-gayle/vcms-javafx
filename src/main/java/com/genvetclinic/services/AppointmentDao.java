@@ -51,8 +51,7 @@ public class AppointmentDao {
         this.databaseConnection = databaseConnection;
     }
 
-    // Methods for saving, updating, deleting, and retrieving appointment information...
-
+    // Methods for saving, updating, deleting, validating, and retrieving appointment information...
     public void saveAppointment(Appointment appointment) throws SQLException {
         String sql = "INSERT INTO appointment (appointment_id, client_name, client_contact, service_required, assigned_personnel, appointment_date, appointment_time, appointment_status) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
