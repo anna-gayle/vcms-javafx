@@ -78,7 +78,7 @@ Make sure you have the following installed on your machine:
 ![Screenshot](screenshots/Laboratory.png)
 ![Screenshot](screenshots/Login.png)
 ![Screenshot](screenshots/Patients.png)
-![Screenshot](screenshots/Recover%Password.png)
+![Screenshot](screenshots/Recover-Password.png)
 ![Screenshot](screenshots/Signup.png)
 ![Screenshot](screenshots/Transaction.png)
 
