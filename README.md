@@ -82,7 +82,7 @@ Make sure you have the following installed on your machine:
 ![Screenshot](screenshots/Signup.png)
 ![Screenshot](screenshots/Transaction.png)
 
-> **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes. Any similarities with reali life individuals are pure conincidence.
+> **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes. Any similarities with real life individuals are pure conincidence.
 
 > Icons by Icons8.
 
