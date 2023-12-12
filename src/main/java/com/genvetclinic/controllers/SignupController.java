@@ -126,12 +126,23 @@ public class SignupController {
             Admin admin = createAdminFromInput();
     
             // Validate user input
-            if (!validateInput(admin) || !ValidationUtils.isValidEmail(admin.getAdminEmail()) ||
-                ValidationUtils.isTooShort(admin.getPassword(), 6)) {
-                AlertUtils.showErrorAlert("Error", "Please fill in all the required fields with valid information.");
+            if (!checkIfNull(admin)) {
+                AlertUtils.showErrorAlert("Error", "Please fill in all fields.");
                 return;
             }
-    
+
+            // Validate password minimum characters
+            if (ValidationUtils.isTooShort(admin.getPassword(), 6)) {
+                AlertUtils.showErrorAlert("Error", "Password needs a minimum of 6 characters.");
+                return;
+            }
+
+            // Validate email
+            if (!ValidationUtils.isValidEmail(admin.getAdminEmail())) {
+                AlertUtils.showErrorAlert("Error", "Please enter a valid email address.");
+                return;
+            }
+
             // Check if the user already exists
             if (adminDao.doesUserExist(admin.getUsername(), admin.getAdminEmail())) {
                 AlertUtils.showErrorAlert("Error", "Admin already exists.");
@@ -200,7 +211,7 @@ public class SignupController {
      * @param admin The Admin object to validate.
      * @return True if the input is valid, false otherwise.
      */
-    private boolean validateInput(Admin admin) {
+    private boolean checkIfNull(Admin admin) {
         return !ValidationUtils.isNullOrEmpty(admin.getUsername()) &&
                 !ValidationUtils.isNullOrEmpty(admin.getPassword()) &&
                 !ValidationUtils.isNullOrEmpty(admin.getSecurityQuestion()) &&
