@@ -68,11 +68,21 @@ Make sure you have the following installed on your machine:
 - Maven
 - MySQL Server
 
-![Screenshot](screenshot.png)
-![Screenshot](screenshot-2.png)
-![Screenshot](screenshot-3.png)
+![Screenshot](screenshots/Account.png)
+![Screenshot](screenshots/Appointment.png)
+![Screenshot](screenshots/Boarder.png)
+![Screenshot](screenshots/Dashboard.png)
+![Screenshot](screenshots/Employee.png)
+![Screenshot](screenshots/Inventory.png)
+![Screenshot](screenshots/Kennels.png)
+![Screenshot](screenshots/Laboratory.png)
+![Screenshot](screenshots/Login.png)
+![Screenshot](screenshots/Patients.png)
+![Screenshot](screenshots/Recover%Password.png)
+![Screenshot](screenshots/Signup.png)
+![Screenshot](screenshots/Transaction.png)
 
-> **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes.
+> **Note:** The information listed in the database is fictional and is provided solely for example and illustrative purposes. Any similarities with reali life individuals are pure conincidence.
 
 > Icons by Icons8.
 
